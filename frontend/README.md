@@ -78,7 +78,7 @@
 
 15. Setup React Router
  - In main.jsx
-   * Replace <StrictMode> to <BrowserRouter>
+   * Replace ***<StrictMode>*** to ***<BrowserRouter>***
    * import {BrowerRouter} from 'react-router-dom'
 
     ```
