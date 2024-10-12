@@ -6,4 +6,11 @@
 6. npm install
 7. npm run dev
 8. copy Local: http://localhost:5173/
- 
+
+
+9. install react router and react toastify
+   ```
+   npm install --save react-toastify
+   ```
+    - React-Toastify allows you to add notifications to your app with ease. No more nonsense!
+    https://www.npmjs.com/package/react-toastify
