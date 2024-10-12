@@ -28,14 +28,16 @@
 
 11. Add assets(products images etc...)
 12. install TailwindCSS
-  -COPY & PASTE on terminal
+  - COPY & PASTE on terminal
   ```
   npm install -D tailwindcss postcss autoprefixer
   ```
   ```
   npx tailwindcss init -p
   ```
-    copy and paste the below code on tailwind.config.js
+
+   - copy and paste the below code on tailwind.config.js
+  
   ```
   /** @type {import('tailwindcss').Config} */
   export default {
@@ -48,4 +50,12 @@
     },
    plugins: [],
   }
+  ```
+
+  - In index.css (copy & paste the below codes)
+
+  ```
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
   ```
