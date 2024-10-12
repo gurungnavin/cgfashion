@@ -10,7 +10,13 @@
 
 9. install react router and react toastify
    ```
+    npm react-router-dom
+   ```
+    - react-router-dom helps you switch between pages in a React app without refreshing the page.
+   ```
    npm install --save react-toastify
    ```
     - React-Toastify allows you to add notifications to your app with ease. No more nonsense!
     https://www.npmjs.com/package/react-toastify
+
+10.    
