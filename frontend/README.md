@@ -25,3 +25,27 @@
  - assest/.svg file
  - clear index.css
  - public/index.html -> change the title
+
+11. Add assets(products images etc...)
+12. install TailwindCSS
+  -COPY & PASTE on terminal
+  ```
+  npm install -D tailwindcss postcss autoprefixer
+  ```
+  ```
+  npx tailwindcss init -p
+  ```
+    copy and paste the below code on tailwind.config.js
+  ```
+  /** @type {import('tailwindcss').Config} */
+  export default {
+   content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+   ],
+   theme: {
+    extend: {},
+    },
+   plugins: [],
+  }
+  ```
