@@ -36,7 +36,7 @@
   npx tailwindcss init -p
   ```
 
-   - copy and paste the below code on tailwind.config.js
+   - Copy and paste the below code on tailwind.config.js
   
   ```
   /** @type {import('tailwindcss').Config} */
@@ -59,3 +59,39 @@
   @tailwind components;
   @tailwind utilities;
   ```
+
+13. Now, create folder structure
+  - src/components 
+  - src/pages
+  - src/context 
+
+14. In pages folders(create 9 files)
+ - Home.jsx
+ - About.jsx
+ - Cart.jsx
+ - Collection.jsx
+ - Contact.jsx
+ - Login.jsx
+ - PlaceOrder.jsx
+ - Orders.jsx
+ - Product.jsx
+
+15. Setup React Router
+ - In main.jsx
+   * Replace <StrictMode> to <BrowserRouter>
+   * import {BrowerRouter} from 'react-router-dom'
+
+    ```
+    import { createRoot } from 'react-dom/client'; // Keep only what's necessary
+    import { BrowserRouter } from 'react-router-dom';
+    import App from './App.jsx';
+    import './index.css';
+
+    const root = createRoot(document.getElementById('root'));
+    root.render(
+      <BrowserRouter>
+       <App />
+      </BrowserRouter>,
+    );
+
+    ```
