@@ -95,3 +95,11 @@
     );
 
     ```
+
+16. Setup `<Routes /> and <Route>` on App.jsx
+  - import { Routes, Route} from 'react-router-dom';
+  - wrap `<Route /> in <Route />`
+  - In `<Route path = "/" element = "{<Home />}" />` path and element should be written.
+  - In Product component, we need the particular component, that's why path = "/product/:productId" & other are same as well.
+
+17. 
