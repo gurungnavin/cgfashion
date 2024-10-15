@@ -98,8 +98,20 @@
 
 16. Setup `<Routes /> and <Route>` on App.jsx
   - import { Routes, Route} from 'react-router-dom';
-  - wrap `<Route /> in <Route />`
+  - wrap `<Route /> in <Routes />`
   - In `<Route path = "/" element = "{<Home />}" />` path and element should be written.
   - In Product component, we need the particular component, that's why path = "/product/:productId" & other are same as well.
 
-17. 
+17. Build Navbar
+  - In Navbar.jsx -> import `<NavLink>` from react-router-dom;
+  - Set navlinks like home, about, contact, collection etc...
+  ```
+  <NavLink to='/about'>
+                <p>About</p>
+  </NavLink>
+  ```
+  - to = '/about' when we click on about, about pages will be open.
+  - In inspect(dev mode), "active" className will be added, when we click on any navlink, this feature got by `<NavLink><NavLink />`
+  - 
+
+18. 
