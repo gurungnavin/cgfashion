@@ -114,4 +114,19 @@
   - In inspect(dev mode), "active" className will be added, when we click on any navlink, this feature got by `<NavLink><NavLink />`
   - 
 
-18. 
+18. In context api
+ ``` import { createContext } from react;
+  import { products } from "../assets/assets"
+  export const ShopContext = createContext();
+  const ShopContextProvider = (props) => {
+  const value = {
+    products
+  }
+  return (
+    <ShopContext.Provider value = {value}>
+    {props.products}
+    </ShopContext>
+  )
+ }
+ export default ShopContextProvider; 
+  ```
