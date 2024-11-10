@@ -1,10 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import { assets } from "../assets/assets";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
   // these states are used for menu in small screen
   const [visible, setVisible] = useState(false);
+  // we need to display the search bar so, only setShowSearch is imported form useContext
+  const {setShowSearch} = useContext(ShopContext);
   return (
     <div className="flex justify-between items-center py-8 font-medium">
       <NavLink to="/">
@@ -31,7 +34,7 @@ const Navbar = () => {
 
       {/* nav collection of search, user and cart */}
       <div className="flex items-center gap-6">
-        <img className="w-5" src={assets.search_icon} alt="search-icon" />
+        <img onClick={()=> setShowSearch(true)} className="w-5" src={assets.search_icon} alt="search-icon" />
         {/* div for profile icon and when we hover it, the dropdown menu, will display. */}
         <div className="group relative">
           <img
