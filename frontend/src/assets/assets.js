@@ -128,7 +128,7 @@ export const products = [
         image: [p_img3],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716234545448,
         bestseller: true
     },
@@ -164,7 +164,7 @@ export const products = [
         image: [p_img6],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716623423448,
         bestseller: true
     },
@@ -200,7 +200,7 @@ export const products = [
         image: [p_img9],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716621235448,
         bestseller: false
     },
@@ -260,7 +260,7 @@ export const products = [
         image: [p_img14],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90", "120"],
         date: 1716626645448,
         bestseller: false
     },
@@ -284,7 +284,7 @@ export const products = [
         image: [p_img16],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716628845448,
         bestseller: false
     },
@@ -308,7 +308,7 @@ export const products = [
         image: [p_img18],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716631045448,
         bestseller: false
     },
@@ -320,7 +320,7 @@ export const products = [
         image: [p_img19],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90", "120"],
         date: 1716632145448,
         bestseller: false
     },
@@ -368,7 +368,7 @@ export const products = [
         image: [p_img23],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716636545448,
         bestseller: false
     },
@@ -380,7 +380,7 @@ export const products = [
         image: [p_img24],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716637645448,
         bestseller: false
     },
@@ -392,7 +392,7 @@ export const products = [
         image: [p_img25],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716638745448,
         bestseller: false
     },
@@ -416,7 +416,7 @@ export const products = [
         image: [p_img27],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716640945448,
         bestseller: false
     },
@@ -452,7 +452,7 @@ export const products = [
         image: [p_img30],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716644245448,
         bestseller: false
     },
@@ -488,7 +488,7 @@ export const products = [
         image: [p_img33],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716647545448,
         bestseller: false
     },
@@ -596,7 +596,7 @@ export const products = [
         image: [p_img42],
         category: "Kids",
         subCategory: "Topwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716657445448,
         bestseller: false
     },
@@ -608,7 +608,7 @@ export const products = [
         image: [p_img43],
         category: "Kids",
         subCategory: "Bottomwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716658545448,
         bestseller: false
     },
@@ -656,7 +656,7 @@ export const products = [
         image: [p_img47],
         category: "Kids",
         subCategory: "Bottomwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716662945448,
         bestseller: false
     },
@@ -668,7 +668,7 @@ export const products = [
         image: [p_img48],
         category: "Men",
         subCategory: "Winterwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90", "100"],
         date: 1716664045448,
         bestseller: false
     },
@@ -692,7 +692,7 @@ export const products = [
         image: [p_img50],
         category: "Kids",
         subCategory: "Bottomwear",
-        sizes: ["S", "M", "L", "XL"],
+        sizes: ["50", "60", "70", "90"],
         date: 1716666245448, bestseller: false
     },
     {
