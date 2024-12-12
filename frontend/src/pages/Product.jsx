@@ -5,14 +5,17 @@ import { assets } from "../assets/assets";
 import RelatedProducts from "../components/RelatedProducts";
 
 const Product = () => {
-  const { products, currency } = useContext(ShopContext);
-  const { productId } = useParams();
+  //the below code, import products data and currency(円)
+  const { products, currency, addToCart } = useContext(ShopContext);
   //this hook useParams is used for get product id
+  const { productId } = useParams();
+  // This useState is used for boolean at first but when the user press the product item, it will display details about products.
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
-  const [size, setSize] = useState('')
+  const [size, setSize] = useState("");
 
   const fetchProductData = async () => {
+    //in this code, we can set products data as setProductData to productData.
     products.map((item) => {
       if (item._id === productId) {
         setProductData(item);
@@ -60,51 +63,78 @@ const Product = () => {
             <img src={assets.star_icon} alt="" className="w-3.5" />
             <img src={assets.star_icon} alt="" className="w-3.5" />
             <img src={assets.star_icon} alt="" className="w-3.5" />
-            <img src={assets.star_icon} alt="" className="w-3.5" />
             <img src={assets.star_dull_icon} alt="" className="w-3.5" />
-            <p className="pl-2">(322)</p>
+            <img src={assets.star_dull_icon} alt="" className="w-3.5" />
+            <p className="pl-2">(132)</p>
           </div>
-          <p className="mt-5 text-3xl font-medium">{productData.price}{currency} 
-            <span className="text-sm ml-1">税込</span></p>
-          <p className="text-red-600 font-medium">{productData.price/10}ポイント</p>
-          <p className="mt-5 text-gray-500 md:w-4/5">{productData.description}</p>
+          <p className="mt-5 text-3xl font-medium">
+            {productData.price}
+            {currency}
+            <span className="text-sm ml-1">税込</span>
+          </p>
+          <p className="text-red-600 font-medium">
+            {productData.price / 10}ポイント
+          </p>
+          <p className="mt-5 text-gray-500 md:w-4/5">
+            {productData.description}
+          </p>
           <div className="flex flex-col gap-4 my-8">
-            <p>サイズ選択</p>
+            <p>Select size</p>
             <div className="flex gap-2">
-             {productData.sizes.map((item, index)=>(
-              <button onClick={()=>setSize(item)} 
-              className= {`border py-2 px-4 bg-gray-100 ${item === size? 'border-orange-500': ''}`} key={index}>
-                {item}</button>
-             ))}
+              {productData.sizes.map((item, index) => (
+                <button
+                  onClick={() => setSize(item)}
+                  className={`border py-2 px-4 bg-gray-100 ${
+                    item === size ? "border-orange-500" : ""
+                  }`}
+                  key={index}
+                >
+                  {item}
+                </button>
+              ))}
             </div>
           </div>
-          <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">ADD TO CART</button>
+          <button onClick={()=> addToCart(productData._id, size)} className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700">
+            ADD TO CART
+          </button>
           <hr className="mt-8 sm:w-4/5" />
           <div className="text-sm text-gray-500 mt-5 flex flex-col gap-1">
-          <p>100%オリジナル製品。</p>
-          <p>この商品は代金引換がご利用いただけます。</p>
-          <p>7日以内の簡単な返品・交換ポリシー。</p>
+            <p>100%オリジナル製品。</p>
+            <p>この商品は代金引換がご利用いただけます。</p>
+            <p>7日以内の簡単な返品・交換ポリシー。</p>
           </div>
         </div>
       </div>
 
       {/* ------------------- DESCRIPTION SECTION ------------------- */}
       <div className="mt-20">
-         <div className="flex">
+        <div className="flex">
           <b className="border px-5 py-3 text-sm">Description</b>
           <p className="border px-5 py-3 text-sm">Reviews (322)</p>
-         </div>
-         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
+        </div>
+        <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
           <p>
-          An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.
+            An e-commerce website is an online platform that facilitates the
+            buying and selling of products or services over the internet. It
+            serves as a virtual marketplace where businesses and individuals can
+            showcase their products, interact with customers, and conduct
+            transactions without the need for a physical presence. E-commerce
+            websites have gained immense popularity due to their convenience,
+            accessibility, and the global reach they offer.
           </p>
           <p>
-          E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.
+            E-commerce websites typically display products or services along
+            with detailed descriptions, images, prices, and any available
+            variations (e.g., sizes, colors). Each product usually has its own
+            dedicated page with relevant information.
           </p>
-         </div>
+        </div>
       </div>
       {/* ---------- display Related Category ----------- */}
-      <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
+      <RelatedProducts
+        category={productData.category}
+        subCategory={productData.subCategory}
+      />
     </div>
   ) : (
     <div className="opacity-0"></div>
