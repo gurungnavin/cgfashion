@@ -7,7 +7,7 @@ const Navbar = () => {
   // these states are used for menu in small screen
   const [visible, setVisible] = useState(false);
   // we need to display the search bar so, only setShowSearch is imported form useContext
-  const {setShowSearch} = useContext(ShopContext);
+  const {setShowSearch, getCartCount} = useContext(ShopContext);
   return (
     <div className="flex justify-between items-center py-8 font-medium">
       <NavLink to="/">
@@ -55,8 +55,8 @@ const Navbar = () => {
         {/* link component(imported form react-router-dom) as work same as link(a-tag) with to =" " */}
         <Link to="/cart" className="relative">
           <img className="w-5 min-w-5" src={assets.cart_icon} alt="" />
-          <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center bg-black rounded-full text-white leading-4 aspect-square text-[10px]">
-            11
+          <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center bg-black rounded-full text-white leading-4 aspect-square text-[12px]">
+            {getCartCount()}
           </p>
         </Link>
         {/* now we want to display menu icon on small screen */}
