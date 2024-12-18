@@ -21,8 +21,7 @@ const ShopContextProvider = (props) => {
         return;
     }
     //このメソッドでは、元の値の移譲可能オブジェクトを、新しいオブジェクトにクローンするのではなく、移譲することもできます。
-    let cartData = structuredClone(cartItems);
-
+    let cartData = structuredClone(cartItems);     
     if(cartData[itemId]) {
         if(cartData[itemId][size]) {
             cartData[itemId][size] += 1;
@@ -57,6 +56,13 @@ const ShopContextProvider = (props) => {
     return totalCount;
   }
 
+  const updateQuantity = async(itemId, size, quantity) => {
+     let cartData = structuredClone(cartItems);
+     cartData[itemId][size] = quantity;
+     setCartItems(cartData);
+  }
+  
+
   const value = {
     products,
     currency,
@@ -67,7 +73,8 @@ const ShopContextProvider = (props) => {
     setShowSearch,
     cartItems,
     addToCart,
-    getCartCount
+    getCartCount,
+    updateQuantity
   };
 
   return (
