@@ -5,7 +5,7 @@ import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity, getCartCount } = useContext(ShopContext);
+  const { products, currency, cartItems, updateQuantity, getCartCount, navigate } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
@@ -64,7 +64,12 @@ const Cart = () => {
         <div className="w-full sm:w-[450px]">
         <CartTotal />
         <div className="w-full text-end">
-          <button className="bg-black text-white text-md my-8 px-8 py-3">レジに進む ({getCartCount()} 個)</button>
+          <button
+          //PlaceOrder should be written as place-order
+          onClick={()=>navigate('/place-order')} 
+          className="bg-black text-white text-md my-8 px-8 py-3">
+            レジに進む ({getCartCount()} 個)
+            </button>
         </div>
         </div>
       </div>

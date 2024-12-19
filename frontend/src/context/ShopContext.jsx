@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 import { products } from "../assets/assets";
 import { toast } from "react-toastify";
+import {useNavigate} from 'react-router-dom'
 
 export const ShopContext = createContext();
 
@@ -13,7 +14,8 @@ const ShopContextProvider = (props) => {
   const [showSearch, setShowSearch] = useState(false);
   // for the cart item
   const [cartItems, setCartItems] = useState({});
-
+  // this hooks is for レジに進むbutton to next page
+  let navigate = useNavigate()
   const addToCart = async (itemId, size) => {
 
     if (!size) {
@@ -96,7 +98,8 @@ const ShopContextProvider = (props) => {
     addToCart,
     getCartCount,
     updateQuantity,
-    getCartAmount
+    getCartAmount,
+    navigate
   };
 
   return (
