@@ -37,11 +37,13 @@ const Navbar = () => {
         <img onClick={()=> setShowSearch(true)} className="w-5" src={assets.search_icon} alt="search-icon" />
         {/* div for profile icon and when we hover it, the dropdown menu, will display. */}
         <div className="group relative">
+          <Link to='/login'>
           <img
             className="w-5 cursor-pointer"
             src={assets.profile_icon}
             alt="user-icon"
           />
+          </Link>
           {/* this div will display as block of group className */}
           <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
             <div className="flex flex-col gap-3 w-36 py-3 px-5 bg-slate-100 text-gray-400 rounded">
