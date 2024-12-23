@@ -15,9 +15,9 @@ const LatestCollection = () => {
   return (
     <div className="my-10">
       <div className="text-center py-8 text-3xl">
-        <Title text1={"Lastest"} text2={"COLLECTION"} />
+        <Title text1={"最新"} text2={"コレクション"} />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nemo
+        人気のアイテムが揃った最新コレクションを今すぐチェック！
         </p>
       </div>
       {/* Rendering Products */}
