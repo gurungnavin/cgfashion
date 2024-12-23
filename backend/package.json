@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "In Backend create folder(backend) -> create file(server.js)->npm init(Terminal)",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "server": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
