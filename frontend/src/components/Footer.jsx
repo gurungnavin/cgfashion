@@ -6,12 +6,7 @@ const Footer = () => {
         <div>
           <img src={assets.logo} className="w-36 mb-5" alt="logo image" />
           <p className="w-full md:w-2/3 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            laudantium laborum unde voluptatum omnis sunt, repellat vero,
-            perferendis necessitatibus beatae incidunt qui similique culpa
-            eveniet, labore corporis fugit voluptatem accusantium sed
-            repudiandae. Nulla deleniti maiores sapiente explicabo obcaecati
-            nesciunt. Odio exercitationem magnam.
+          私たちは、お客様に信頼される品質とサービスを提供することを大切にしています。お客様の期待に応えるため、常に改善を重ね、より良い製品をお届けできるよう努力しています。どんな小さなご要望にも、真摯に対応させていただきます。
           </p>
         </div>
         <div>
