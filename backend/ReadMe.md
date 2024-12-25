@@ -86,3 +86,15 @@ inside the .env
 MONGODB_URI with password.
 ※Thunder Client(vsCode extension) will be helpful to test API.
 
+Environmental Variables - Handling .env file securely
+Create `.gitignore
+
+Add .env to .gitignore so Git ignores it in future commits.
+
+If you've already pushed the .env file to GitHub:
+
+Use git rm --cached .env to stop tracking the file.
+Commit the change with a message like "Remove .env from Git tracking".
+Push the changes with git push origin --force to overwrite the history.
+Important:
+.env files contain sensitive information (API keys, secrets, etc.). If pushed to GitHub, they could be exposed, compromising your data and security.
