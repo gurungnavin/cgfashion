@@ -7,7 +7,7 @@ export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
   const currency = "円";
-  const delivery_fee = 130;
+  const delivery_fee = 135;
   //this state is for search the items
   const [search, setSearch] = useState("");
   // this state is for display search or hidden
