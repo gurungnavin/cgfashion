@@ -104,4 +104,5 @@ Important:
 
 # userController.js -> userRegister
 
-try & catch
+![new registor](https://github.com/user-attachments/assets/5d886aa7-8549-4e6b-a923-c3f49b7d6586)
+
