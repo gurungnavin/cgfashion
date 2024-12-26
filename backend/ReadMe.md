@@ -98,3 +98,10 @@ Commit the change with a message like "Remove .env from Git tracking".
 Push the changes with git push origin --force to overwrite the history.
 Important:
 .env files contain sensitive information (API keys, secrets, etc.). If pushed to GitHub, they could be exposed, compromising your data and security.
+
+
+
+
+# userController.js -> userRegister
+
+try & catch
