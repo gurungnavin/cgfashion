@@ -46,11 +46,10 @@ const addProduct = async (req, res) => {
       image: imageURL,
       date : Date.now()
     }
-
+  // after get imageURL from cloudinary, save to mongodb atlas collection.
     let product = new productModel(productData);
     await product.save();
-    
-
+    // success response messages.
     res.json({success: true, message : "product updated successfully"});
   } catch (error) {
     console.log(error);
@@ -59,10 +58,46 @@ const addProduct = async (req, res) => {
 };
 
 // function for total list product
-const totalListProduct = async (req, res) => {};
+const totalListProduct = async (req, res) => {
+  try {
+    // this logic will find all the product list of db.
+    const products = await productModel.find({});
+    res.json({success: true, products})
+    
+  } catch (error) {
+    console.log(error);
+    res.json({success: false, message : error.message})
+    
+  }
+
+};
 // function for add product
-const removeProduct = async (req, res) => {};
+const removeProduct = async (req, res) => {
+  try {
+    await productModel.findByIdAndDelete(req.body.id)
+    res.json({success: true, message: "Product Removed"})
+    
+  } catch (error) {
+    console.log(error);
+    res.json({success: false, message: error.message})
+    
+  }
+
+};
 // function for add product
-const singleProduct = async (req, res) => {};
+const singleProduct = async (req, res) => {
+  try {
+
+    const {productId} = req.body
+    const  product = await productModel.findById(productId)
+    res.json({success: true, product})
+    
+  } catch (error) {
+    console.log(error);
+    res.json({success: true, message: error.message})
+    
+  }
+
+};
 
 export { addProduct, totalListProduct, removeProduct, singleProduct };
