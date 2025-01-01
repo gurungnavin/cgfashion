@@ -5,21 +5,21 @@ import { assets } from "../assets/assets";
 import RelatedProducts from "../components/RelatedProducts";
 
 const Product = () => {
+   //this hook useParams is used for get product id
+   const { productId } = useParams();
   //the below code, import products data and currency(円)
   const { products, currency, addToCart } = useContext(ShopContext);
-  //this hook useParams is used for get product id
-  const { productId } = useParams();
   // This useState is used for boolean at first but when the user press the product item, it will display details about products.
   const [productData, setProductData] = useState(false);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState('');
   const [size, setSize] = useState("");
 
   const fetchProductData = async () => {
     //in this code, we can set products data as setProductData to productData.
     products.map((item) => {
       if (item._id === productId) {
-        setProductData(item);
-        setImage(item.image[0]);
+        setProductData(item);        
+        setImage(item.image[0])
         return null;
       }
     });
@@ -29,7 +29,7 @@ const Product = () => {
 
   useEffect(() => {
     fetchProductData();
-  }, [productId, products]);
+  }, [productId]);
 
   return productData ? (
     <div className="border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100">

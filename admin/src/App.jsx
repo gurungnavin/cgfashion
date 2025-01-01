@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 //import env(backend api) and export as backendURL to use.
 export const backendURL = import.meta.env.VITE_BACKEND_URL
+export const currency = '円'
 
 const App = () => {
 

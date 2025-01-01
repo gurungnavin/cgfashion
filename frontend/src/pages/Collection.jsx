@@ -67,7 +67,7 @@ const Collection = () => {
 
   useEffect(() => {
     applyFilter();
-  }, [category, subCategory, search, showSearch]);
+  }, [category, subCategory, search, showSearch, products]);
 
   useEffect(() => {
     sortProduct();
@@ -118,7 +118,7 @@ const Collection = () => {
               <input
                 className="w-3"
                 type="checkbox"
-                value={"Kids"}
+                value={"Kid"}
                 onChange={toggleCategory}
               />{" "}
               子供
@@ -155,10 +155,10 @@ const Collection = () => {
               <input
                 className="w-3"
                 type="checkbox"
-                value={"Winterwear"}
+                value={"Winter"}
                 onChange={toggleSubCategory}
               />{" "}
-              Winterwear
+              Winter
             </p>
           </div>
         </div>
