@@ -11,6 +11,8 @@ const ShopContextProvider = (props) => {
   // to connect api from .env file.
   const backendURL = import.meta.env.VITE_BACKEND_URL
   const [products, setProducts] = useState([])
+  // this state is for token for login
+  const [token, setToken] = useState('')
   //this state is for search the items
   const [search, setSearch] = useState("");
   // this state is for display search or hidden
@@ -99,7 +101,8 @@ const ShopContextProvider = (props) => {
             totalAmout += itemInfo.price * cartItems[items][item]
           }
         } catch (error) {
-          
+          console.log(error);
+          toast.error(error.message)
         }
       }
     }
@@ -122,7 +125,9 @@ const ShopContextProvider = (props) => {
     updateQuantity,
     getCartAmount,
     navigate,
-    backendURL, 
+    backendURL,
+    setToken,
+    token 
   };
 
   return (
