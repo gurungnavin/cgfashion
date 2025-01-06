@@ -91,13 +91,29 @@ const ShopContextProvider = (props) => {
       toast.error(error.message)
     }
   }
+
+  const getUserCart = async(token) => {
+    try {
+      let response = await axios.get(backendURL + 'api/cart/get', {}, {headers: {token}})
+
+      if(response.data.success) {
+        setCartItems(response.data.cartData)
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error.message)
+    }
+  }
+
   useEffect(()=> {
     getProductData();
+
   })
 
   useEffect(()=> {
     if(!token && localStorage.getItem('token')) {
       setToken(localStorage.getItem('token'))
+      getUserCart(localStorage.getItem('token'));
     }
   },[])
 
@@ -139,6 +155,7 @@ const ShopContextProvider = (props) => {
     showSearch,
     setShowSearch,
     cartItems,
+    setCartItems,
     addToCart,
     getCartCount,
     updateQuantity,
