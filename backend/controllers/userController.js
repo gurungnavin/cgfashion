@@ -56,7 +56,7 @@ const registerUser = async (req, res) => {
     if(password < 8) {
       return res.json({
         success: false,
-        message: "Enter strong password"
+        message: "パスワードを入力してください。"
       });
     }
     //hashing password

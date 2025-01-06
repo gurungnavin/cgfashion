@@ -7,7 +7,19 @@ const Navbar = () => {
   // these states are used for menu in small screen
   const [visible, setVisible] = useState(false);
   // we need to display the search bar so, only setShowSearch is imported form useContext
-  const {setShowSearch, getCartCount} = useContext(ShopContext);
+  const {setShowSearch, getCartCount, navigate, token, setToken, setCartItems} = useContext(ShopContext);
+  //logout logic
+  const logout =() => {
+    // and navigate to the login page
+    navigate('/login')
+    //remove token from localStorage
+    localStorage.removeItem('token')
+    // set Token empty
+    setToken('')
+    // cart Items also empty
+    setCartItems({})
+    
+  }
   return (
     <div className="flex justify-between items-center py-8 font-medium">
       <NavLink to="/">
@@ -37,22 +49,24 @@ const Navbar = () => {
         <img onClick={()=> setShowSearch(true)} className="w-5" src={assets.search_icon} alt="search-icon" />
         {/* div for profile icon and when we hover it, the dropdown menu, will display. */}
         <div className="group relative">
-          <Link to='/login'>
           <img
+            onClick={() => token ? null : navigate('/login')}
             className="w-5 cursor-pointer"
             src={assets.profile_icon}
             alt="user-icon"
           />
-          </Link>
           {/* this div will display as block of group className */}
+          {/* if token is available, only the dropdown menu by hove is displayed */}
+          {token && 
           <div className="hidden group-hover:block absolute dropdown-menu right-0 pt-4">
-            <div className="flex flex-col gap-3 w-36 py-3 px-5 bg-slate-100 text-gray-400 rounded">
-              {/* this div is for card of menu list */}
-              <p className="cursor-pointer hover:text-black">My Profile</p>
-              <p className="cursor-pointer hover:text-black">Orders</p>
-              <p className="cursor-pointer hover:text-black">Logout</p>
-            </div>
+          <div className="flex flex-col gap-3 w-36 py-3 px-5 bg-slate-100 text-gray-400 rounded">
+            {/* this div is for card of menu list */}
+            <p className="cursor-pointer hover:text-black">My Profile</p>
+            <p onClick={()=> navigate('/orders')} className="cursor-pointer hover:text-black">Orders</p>
+            <p onClick={logout}  className="cursor-pointer hover:text-black">Logout</p>
           </div>
+        </div>
+          }
         </div>
         {/* link component(imported form react-router-dom) as work same as link(a-tag) with to =" " */}
         <Link to="/cart" className="relative">

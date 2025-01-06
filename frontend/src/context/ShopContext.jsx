@@ -21,6 +21,8 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
   // this hooks is for レジに進むbutton to next page
   let navigate = useNavigate()
+
+
   const addToCart = async (itemId, size) => {
 
     if (!size) {
@@ -42,6 +44,17 @@ const ShopContextProvider = (props) => {
         cartData[itemId][size] = 1;
     }
     setCartItems(cartData);
+    // if logged in, we are going to called api.
+    if(token) {
+      try {
+        let response = await axios.post(backendURL + '/api/cart/add', {itemId, size}, {headers: {token}})
+
+        console.log(response)
+      } catch (error) {
+        console.log(error);
+        toast.error(error.message)
+      }
+    }
   };
 
   const getCartCount = () => {
@@ -81,6 +94,12 @@ const ShopContextProvider = (props) => {
   useEffect(()=> {
     getProductData();
   })
+
+  useEffect(()=> {
+    if(!token && localStorage.getItem('token')) {
+      setToken(localStorage.getItem('token'))
+    }
+  },[])
 
   const updateQuantity = async(itemId, size, quantity) => {
      let cartData = structuredClone(cartItems);
