@@ -16,7 +16,7 @@ const PlaceOrder = () => {
     getCartAmount,
     navigate,
     backendURL,
-    token,
+    token
   } = useContext(ShopContext);
 
   // from the backend api(orders) to connect frontend, first we create state variable and
@@ -76,7 +76,6 @@ const PlaceOrder = () => {
         items: orderItems,
         amount: getCartAmount() + delivery_fee,
       };
-      console.log(orderData);
       
 
       switch (method) {
@@ -86,7 +85,6 @@ const PlaceOrder = () => {
             orderData,
             { headers: { token } }
           );
-          console.log(response);
 
           if (response.data.success) {
             setCartItems({});
