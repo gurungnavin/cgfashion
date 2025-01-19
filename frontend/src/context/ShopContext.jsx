@@ -109,7 +109,7 @@ const ShopContextProvider = (props) => {
     getProductData();
 
   })
-
+// if there is no token after logged in, set token.
   useEffect(()=> {
     if(!token && localStorage.getItem('token')) {
       setToken(localStorage.getItem('token'))
