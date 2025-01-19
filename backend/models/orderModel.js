@@ -6,7 +6,7 @@ const orderSchema = new mongoose.Schema({
     userId : {type: String, reuqired : true},
     items: {type: Array, reuqired: true},
     amount: {type : Number, reuqired: true},
-    address: { type: String, reuqired: true },
+    address: { type: Object, reuqired: true },
     status: { type: String, reuqired: true , default: 'Order Placed'},
     paymentMethod: {type: String, reuqired:true},
     payment: {type: Boolean, reuqire: true, default: false},
